@@ -211,9 +211,16 @@
   },
   {
     "source": "鉅亨網－國際股",
+    "title": "搶救能源運輸！川普政府推200億美元油輪再保險計畫",
+    "link": "https://news.cnyes.com/news/id/6369082",
+    "summary": "在美伊衝突升溫、波斯灣航運幾乎停擺之際，川普政府週五 (6 日) 宣布推出一項規模 200 億美元的油輪再保險計畫，希望藉此恢復船舶通過荷姆茲海峽的航運活動。",
+    "published": "2026-03-07 06:14"
+  },
+  {
+    "source": "鉅亨網－國際股",
     "title": "〈美股盤後〉川普要伊朗無條件投降 油價飆破90美元 道瓊跌超450點 三大指數周線全黑",
     "link": "https://news.cnyes.com/news/id/6368877",
-    "summary": "油價飆破 90 美元，就業數據意外轉弱，美股週五 (6 日) 再度走低，主要指數同步收黑，也讓華爾街創下近一年來表現最差的一週。",
+    "summary": "油價飆破 90 美元，就業數據意外轉弱，美股週五 (6 日) 再度走低，主要指數同步收黑，也創下近一年來表現最差的一週。",
     "published": "2026-03-07 06:08"
   },
   {
@@ -411,13 +418,6 @@
     "link": "https://news.cnyes.com/news/id/6366483",
     "summary": "&lt;p&gt;中東局勢動盪再起，迫使投資人再次湧向避險資產，這也重新點燃了老問題：在高壓力時刻，哪些資產才真正「靠得住」？目前看來，傳統避險工具的表現出現分化，黃金價格大幅震盪，過去一年曾經失寵的美元卻突然「翻身」，讓市場對避險邏輯展開新一輪檢驗。&lt;/p&gt;\n\n&lt;p&gt;路透統整過去一周以來幾項熱門避險資產的表現，並加以分析：&lt;/p&gt;\n\n&lt;h6&gt;美元經…",
     "published": "2026-03-06 19:00"
-  },
-  {
-    "source": "鉅亨網－國際股",
-    "title": "油價衝破80美元！美國能源自給成護身符 美股抗跌、國際股市落難",
-    "link": "https://news.cnyes.com/news/id/6367057",
-    "summary": "&lt;p&gt;上周末 (2 月 28 日) 伊朗衝突爆發以來，在中東戰火的背景下，國際油價逐漸攀上每桶 80 美元的水準，在此同時，國際股市表現也明顯落後標普 500，顯示投資人認為這場衝突難以在短期內化解。&lt;/p&gt;\n\n&lt;p&gt;根據道瓊市場數據，截至周三為止的三個交易日以來，標普 500 指數相對於 MSCI 全世界不含美國指數 (MSCI AC World ex-USA…",
-    "published": "2026-03-06 18:40"
   },
   {
     "source": "鉅亨網－港股",
@@ -631,9 +631,16 @@
   },
   {
     "source": "鉅亨網－美股",
+    "title": "搶救能源運輸！川普政府推200億美元油輪再保險計畫",
+    "link": "https://news.cnyes.com/news/id/6369082",
+    "summary": "在美伊衝突升溫、波斯灣航運幾乎停擺之際，川普政府週五 (6 日) 宣布推出一項規模 200 億美元的油輪再保險計畫，希望藉此恢復船舶通過荷姆茲海峽的航運活動。",
+    "published": "2026-03-07 06:14"
+  },
+  {
+    "source": "鉅亨網－美股",
     "title": "〈美股盤後〉川普要伊朗無條件投降 油價飆破90美元 道瓊跌超450點 三大指數周線全黑",
     "link": "https://news.cnyes.com/news/id/6368877",
-    "summary": "油價飆破 90 美元，就業數據意外轉弱，美股週五 (6 日) 再度走低，主要指數同步收黑，也讓華爾街創下近一年來表現最差的一週。",
+    "summary": "油價飆破 90 美元，就業數據意外轉弱，美股週五 (6 日) 再度走低，主要指數同步收黑，也創下近一年來表現最差的一週。",
     "published": "2026-03-07 06:08"
   },
   {
@@ -833,13 +840,6 @@
     "published": "2026-03-06 09:00"
   },
   {
-    "source": "鉅亨網－美股",
-    "title": "川習會前 美議員促財長貝森特防範中國投資",
-    "link": "https://news.cnyes.com/news/id/6366465",
-    "summary": "《路透》報導，美國國會對中國策略的委員會主席警告財政部長貝森特 (Scott Bessent)，若恢復中國工業企業進入美國市場的管道，將削弱美國總統川普重振美國製造業的努力。川普正準備前往北京進行貿易談判。",
-    "published": "2026-03-06 08:40"
-  },
-  {
     "source": "經濟日報－財經",
     "title": "新光保全啟動「D.A.N.C.E」策略 以AI賦能推動安全科技升級",
     "link": "https://money.udn.com/money/story/5612/9364752",
@@ -876,38 +876,45 @@
   },
   {
     "source": "Yahoo Finance",
-    "title": "Victoria’s Secret tops holiday quarter earning estimates",
-    "link": "https://finance.yahoo.com/news/victoria-secret-tops-holiday-quarter-145400882.html",
+    "title": "Target Profits Between $165 and $175 with a Broken Wing Butterfly on Nvidia Stock",
+    "link": "https://finance.yahoo.com/news/target-profits-between-165-175-152402961.html",
     "summary": "",
-    "published": "2026-03-05T14:54:00Z"
+    "published": "2026-03-05T15:24:02Z"
   },
   {
     "source": "Yahoo Finance",
-    "title": "Deutsche Raises its Price Target on Banco Bilbao Vizcaya Argentaria, S.A. (BBVA) to EUR 21.24 and Maintains a Buy Rating",
-    "link": "https://finance.yahoo.com/news/deutsche-raises-price-target-banco-145552174.html",
+    "title": "AECOM (ACM) Falls Despite Earnings Beat on Revenue Miss",
+    "link": "https://finance.yahoo.com/news/aecom-acm-falls-despite-earnings-152334125.html",
     "summary": "",
-    "published": "2026-03-05T14:55:52Z"
+    "published": "2026-03-05T15:23:34Z"
   },
   {
     "source": "Yahoo Finance",
-    "title": "UBS Lowers its Price Target on Abercrombie & Fitch Co. (ANF) to $149 and Maintains a Buy Rating",
-    "link": "https://finance.yahoo.com/news/ubs-lowers-price-target-abercrombie-145551825.html",
+    "title": "Is It Too Late to Buy Bloom Energy Stock?",
+    "link": "https://finance.yahoo.com/news/too-buy-bloom-energy-stock-152500942.html",
     "summary": "",
-    "published": "2026-03-05T14:55:51Z"
+    "published": "2026-03-05T15:25:00Z"
   },
   {
     "source": "Yahoo Finance",
-    "title": "Bread Financial Holdings, Inc. (BFH) Announces Board Approval of a $600 Million Increase to its Existing Share Repurchase Authorization",
-    "link": "https://finance.yahoo.com/news/bread-financial-holdings-inc-bfh-145554159.html",
+    "title": "3 ‘Strong Buy’ Dividend Kings That Wall Street Loves Most in 2026",
+    "link": "https://finance.yahoo.com/news/3-strong-buy-dividend-kings-152023051.html",
     "summary": "",
-    "published": "2026-03-05T14:55:54Z"
+    "published": "2026-03-05T15:20:23Z"
   },
   {
     "source": "Yahoo Finance",
-    "title": "Fidelis Insurance Holdings Limited (FIHL) Announces a Definitive Agreement to Repurchase all Common Shares Held by CVC Falcon for $163.35M",
-    "link": "https://finance.yahoo.com/news/fidelis-insurance-holdings-limited-fihl-145555014.html",
+    "title": "PENN Entertainment (PENN) Slides on Q3 Miss and ESPN Partnership Exit",
+    "link": "https://finance.yahoo.com/news/penn-entertainment-penn-slides-q3-152639585.html",
     "summary": "",
-    "published": "2026-03-05T14:55:55Z"
+    "published": "2026-03-05T15:26:39Z"
+  },
+  {
+    "source": "MarketWatch Top Stories",
+    "title": "These stocks in the S&P 500 have dropped the most since the U.S. and Israel attacked Iran",
+    "link": "https://www.marketwatch.com/story/these-stocks-in-the-s-p-500-have-dropped-the-most-since-the-u-s-and-israel-attacked-iran-ee7d67da?mod=mw_rss_topstories",
+    "summary": "A disappointing Friday employment report helped send stocks down further, with cruise operators hammered",
+    "published": "Fri, 06 Mar 2026 22:16:00 GMT"
   },
   {
     "source": "MarketWatch Top Stories",
@@ -936,13 +943,6 @@
     "link": "https://www.marketwatch.com/story/defense-companies-are-meeting-trump-today-heres-what-hell-ask-for-after-demanding-irans-surrender-c84d34d3?mod=mw_rss_topstories",
     "summary": "The meeting came shortly after a Trump social-media post appearing to rule out talks with Iran as the conflict drags down stocks and as oil prices shoot up.",
     "published": "Fri, 06 Mar 2026 21:47:00 GMT"
-  },
-  {
-    "source": "MarketWatch Top Stories",
-    "title": "‘I have a legal and a moral question’: My dad left when I was 9, reconnected with me in my 50s and now needs money. What do I owe him?",
-    "link": "https://www.marketwatch.com/story/i-have-a-legal-and-a-moral-question-my-dad-left-when-i-was-9-reconnected-with-me-in-my-50s-and-now-needs-money-what-do-i-owe-him-ca780520?mod=mw_rss_topstories",
-    "summary": "“After the divorce was finalized, he and his partner moved out of state to a place where there would be no child-support enforcement.”",
-    "published": "Fri, 06 Mar 2026 21:21:00 GMT"
   },
   {
     "source": "WSJ Markets",
@@ -1086,6 +1086,20 @@
   },
   {
     "source": "中央社－財經",
+    "title": "市場對中東戰事憂慮加深　美股續挫",
+    "link": "https://www.cna.com.tw/news/afe/202603070009.aspx",
+    "summary": "（中央社紐約6日綜合外電報導）美國總統川普要求伊朗無條件投降，投資人對中東戰事憂慮加深推升油價大漲，加上美國就業人數意外下降，在利空衝擊下，美股今天續挫收黑。",
+    "published": "Sat, 07 Mar 2026 06:23:50 +0800"
+  },
+  {
+    "source": "中央社－財經",
+    "title": "油價飆漲　週線漲幅近30%",
+    "link": "https://www.cna.com.tw/news/afe/202603070007.aspx",
+    "summary": "（中央社紐約6日綜合外電報導）市場對中東戰事恐導致原油供應中斷的憂慮加劇，油價今天飆漲，週線累計漲幅近30%。",
+    "published": "Sat, 07 Mar 2026 05:18:45 +0800"
+  },
+  {
+    "source": "中央社－財經",
     "title": "利空出籠　歐股收黑",
     "link": "https://www.cna.com.tw/news/afe/202603070005.aspx",
     "summary": "（中央社倫敦6日綜合外電報導）美國總統川普要求伊朗無條件投降、伊拉克油田遭攻擊導致油價大漲，加上美國就業數據意外下滑等影響，歐洲股市今天收黑。",
@@ -1139,20 +1153,6 @@
     "link": "https://www.cna.com.tw/news/afe/202603060314.aspx",
     "summary": "（中央社記者蘇思云台北6日電）南山人壽今天公告，今年1月1日起適用IFRS 17並進行金融資產重新指定後，帳列合併股東權益金額較適用前2025年12月31日減少新台幣約631億元，主要是因保險負債按現時利率衡量影響，目前累計CSM（合約服務邊際）餘額近3800億元，基礎穩固，未來可帶來穩定且可持續的收益。",
     "published": "Fri, 06 Mar 2026 20:55:09 +0800"
-  },
-  {
-    "source": "中央社－財經",
-    "title": "大樂透第115033期開獎",
-    "link": "https://www.cna.com.tw/news/ahel/202603060312.aspx",
-    "summary": "（中央社台北6日電）大樂透第115033期今晚開獎。中獎號碼為23、09、12、11、14、25，特別號42。",
-    "published": "Fri, 06 Mar 2026 20:51:05 +0800"
-  },
-  {
-    "source": "中央社－財經",
-    "title": "今彩539第115059期開獎",
-    "link": "https://www.cna.com.tw/news/ahel/202603060310.aspx",
-    "summary": "（中央社台北6日電）今彩539第115059期開獎，中獎號碼34、32、24、29、19。3星彩中獎號碼161，4星彩中獎號碼7093。",
-    "published": "Fri, 06 Mar 2026 20:45:00 +0800"
   },
   {
     "source": "中央社－科技",
@@ -1296,6 +1296,13 @@
   },
   {
     "source": "NHK World",
+    "title": "NYダウ 450ドル余の値下がり 雇用統計やイラン情勢受け",
+    "link": "https://news.web.nhk/newsweb/na/na-k10015068921000",
+    "summary": "6日のニューヨーク株式市場ではアメリカの景気減速への懸念などを背景に売り注文が広がり、ダウ平均株価は前日から450ドル余り値下がりしました。",
+    "published": "Sat, 07 Mar 2026 07:35:32 +0900"
+  },
+  {
+    "source": "NHK World",
     "title": "原油市場 WTI先物価格が値上がり 一時1バレル＝92ドル台に",
     "link": "https://news.web.nhk/newsweb/na/na-k10015068801000",
     "summary": "アメリカなどとイランとの間の攻撃の応酬が長期化し原油の供給が滞ることへの懸念が一段と強まり、6日のニューヨーク原油市場では国際的な取り引きの指標となるWTIの先物価格が一時、1バレル＝92ドル台まで値…",
@@ -1314,13 +1321,6 @@
     "link": "https://news.web.nhk/newsweb/na/na-k10015068861000",
     "summary": "円相場や株価に影響を及ぼすアメリカの雇用統計が発表され、2月の農業分野以外の就業者は前の月から9万2000人の大幅な減少となりました。増加を見込んでいた市場予想を大きく下回り、金融市場では雇用情勢の減…",
     "published": "Sat, 07 Mar 2026 01:10:09 +0900"
-  },
-  {
-    "source": "NHK World",
-    "title": "NYダウ 一時900ドル超値下がり 雇用統計やイラン情勢受け",
-    "link": "https://news.web.nhk/newsweb/na/na-k10015068921000",
-    "summary": "6日のニューヨーク株式市場では取り引き開始直後から売り注文が広がり、ダウ平均株価は一時、前日の終値と比べて900ドルを超える大幅な値下がりとなりました。",
-    "published": "Sat, 07 Mar 2026 00:05:47 +0900"
   },
   {
     "source": "NHK World",
@@ -1646,7 +1646,7 @@
   },
   {
     "source": "彭博社－市場",
-    "title": "米国株が続落、弱い雇用統計と原油高が重し－円は157円台後半",
+    "title": "【米国市況】株続落、雇用統計や信用不安が重し－原油の上昇止まらず",
     "link": "https://www.bloomberg.com/jp/news/articles/2026-03-06/TBHQ99KK3NY900?srnd=jp-markets",
     "summary": "",
     "published": ""
@@ -1786,6 +1786,20 @@
   },
   {
     "source": "產經新聞－經濟",
+    "title": "米国の対イラン「壮絶なる怒り」作戦　隠された狙いは中国の覇権封じ　田村秀男",
+    "link": "https://www.sankei.com/article/20260307-F2DSEDFXEJOLBMQJDEX5EOFHRA/",
+    "summary": "",
+    "published": ""
+  },
+  {
+    "source": "產經新聞－經濟",
+    "title": "iPS再生医療「何としても」未踏の本承認に挑む住友ファーマ　年内にも治療開始で緊張感",
+    "link": "https://www.sankei.com/article/20260307-PTZVFR367BIN3GHXHSV67PZHVI/",
+    "summary": "",
+    "published": ""
+  },
+  {
+    "source": "產經新聞－經濟",
     "title": "赤沢亮正経済産業相とラトニック米商務長官が代替関税を協議　対米投資の第2弾も",
     "link": "https://www.sankei.com/article/20260307-YSPSGMSPWZM2NKI2OO5AJ6VEXI/",
     "summary": "",
@@ -1837,20 +1851,6 @@
     "source": "產經新聞－經濟",
     "title": "さよなら「iモード」　携帯電話によるネット接続浸透に貢献　独自の発展、ガラパゴス化も",
     "link": "https://www.sankei.com/article/20260306-EZKA3MC5WBNP3L7HAQ66RSQRZU/",
-    "summary": "",
-    "published": ""
-  },
-  {
-    "source": "產經新聞－經濟",
-    "title": "中国新車販売、1～2月はトヨタと日産が微減　EVの税優遇縮小もモデルチェンジ奏功",
-    "link": "https://www.sankei.com/article/20260306-42T6A2PW7RPNBMKS4UD2QMMFOE/",
-    "summary": "",
-    "published": ""
-  },
-  {
-    "source": "產經新聞－經濟",
-    "title": "中国、2030年末までにAI関連産業を230兆円規模に拡大へ　全人代に合わせ記者会見",
-    "link": "https://www.sankei.com/article/20260306-U7AKTNCHTVOYFKMYKLDU7GVDKI/",
     "summary": "",
     "published": ""
   },
@@ -1919,8 +1919,8 @@
   },
   {
     "source": "讀賣新聞－經濟",
-    "title": "日本生命の米国法人、米オープンＡＩを提訴…「チャットＧＰＴ」が弁護士資格を持たずに法的助言か",
-    "link": "https://www.yomiuri.co.jp/economy/20260306-GYT1T00138/",
+    "title": "読売３３３、前週末比２９１０円安…イラン情勢の緊迫化で売り広がる",
+    "link": "https://www.yomiuri.co.jp/economy/20260306-GYT1T00322/",
     "summary": "",
     "published": ""
   }

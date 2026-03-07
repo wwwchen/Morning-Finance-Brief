@@ -43,14 +43,38 @@ def send_message(token: str, chat_id: str, text: str) -> bool:
         return False
 
 
-def build_telegram_messages(all_news: list[dict], report_date: str) -> list[str]:
+def _format_indices_block(indices: list[dict]) -> str:
+    """將大盤指數格式化為 Telegram HTML 區塊。"""
+    if not indices:
+        return ""
+    lines = ["📊 <b>大盤指數</b>"]
+    for idx in indices:
+        if idx["close"] is None:
+            lines.append(f"{idx['name']}: —")
+            continue
+        arrow = "▲" if idx["change"] >= 0 else "▼"
+        sign  = "+" if idx["change"] >= 0 else ""
+        lines.append(
+            f"{idx['name']}: {idx['close']:,.2f} "
+            f"{arrow} {sign}{idx['change']:,.2f} ({sign}{idx['change_pct']:.2f}%) "
+            f"[{idx['date']}]"
+        )
+    return "\n".join(lines) + "\n"
+
+
+def build_telegram_messages(
+    all_news: list[dict], report_date: str, indices: list[dict] | None = None
+) -> list[str]:
     """將新聞拆成不超過 MAX_MESSAGE_LENGTH 的訊息串列。"""
+    indices_block = _format_indices_block(indices or [])
     header = (
         f"📰 <b>晨間財經報告 {report_date}</b>\n"
         f"🕖 {datetime.now(TW_TZ).strftime('%H:%M')} 台灣時間\n"
         f"共 {len(all_news)} 則新聞\n"
-        "─────────────────────\n\n"
+        "─────────────────\n\n"
     )
+    if indices_block:
+        header += indices_block + "─────────────────\n\n"
 
     messages = []
     current = header
@@ -91,9 +115,15 @@ def main():
         sys.exit(1)
 
     all_news = json.loads(json_path.read_text(encoding="utf-8"))
+    # 相容新版本 JSON 格式 {"indices": [...], "news": [...]}
+    if isinstance(all_news, dict):
+        indices = all_news.get("indices", [])
+        all_news = all_news.get("news", [])
+    else:
+        indices = []
     print(f"讀取 {len(all_news)} 則新聞，準備推播...")
 
-    messages = build_telegram_messages(all_news, today_tw)
+    messages = build_telegram_messages(all_news, today_tw, indices)
     print(f"拆分為 {len(messages)} 則 Telegram 訊息")
 
     success = True

@@ -5,7 +5,9 @@ fetch_news.py
 - 其他來源：RSS feedparser
 """
 
+import csv
 import feedparser
+import io
 import json
 import re
 import sys
@@ -129,6 +131,96 @@ HEADERS = {
     "User-Agent": "MorningFinanceBrief/1.0 (https://github.com/wwwchen/Morning-Finance-Brief)"
 }
 
+# ── 大盤指數 ─────────────────────────────────────────────────────────────────
+# yfinance 為主要來源，Stooq 為備援
+INDICES = [
+    {"name": "台灣加權", "yf": "^TWII", "stooq": "^twig"},
+    {"name": "S&P 500",  "yf": "^GSPC", "stooq": "^spx"},
+    {"name": "那斯達克", "yf": "^IXIC", "stooq": "^ndq"},
+    {"name": "道　　瓊", "yf": "^DJI",  "stooq": "^dji"},
+    {"name": "日經 225", "yf": "^N225", "stooq": "^nkx"},
+    {"name": "恆生指數", "yf": "^HSI",  "stooq": "^hsi"},
+]
+
+
+def _stooq_last_close(symbol: str) -> tuple[float, float, str] | None:
+    """從 Stooq 抓最近兩個交易日收盤價。回傳 (close, prev_close, date_str) 或 None。"""
+    try:
+        resp = requests.get(
+            "https://stooq.com/q/d/l/",
+            params={"s": symbol, "i": "d"},
+            headers=HEADERS,
+            timeout=15,
+        )
+        resp.raise_for_status()
+        rows = list(csv.DictReader(io.StringIO(resp.text)))
+        if len(rows) < 2:
+            return None
+        last, prev = rows[-1], rows[-2]
+        return float(last["Close"]), float(prev["Close"]), last["Date"]
+    except Exception as e:
+        print(f"  [WARN] Stooq {symbol}: {e}", file=sys.stderr)
+        return None
+
+
+def fetch_indices() -> list[dict]:
+    """抓取各大盤指數最後收盤價，yfinance 為主，Stooq 為備援。"""
+    print("\n--- 大盤指數 ---")
+    try:
+        import yfinance as yf  # noqa: PLC0415
+        yf_ok = True
+    except ImportError:
+        print("  [WARN] yfinance 未安裝，切換 Stooq 備援", file=sys.stderr)
+        yf_ok = False
+
+    results = []
+    for idx in INDICES:
+        entry: dict = {
+            "name": idx["name"],
+            "close": None,
+            "prev_close": None,
+            "change": None,
+            "change_pct": None,
+            "date": "",
+        }
+        fetched = False
+
+        if yf_ok:
+            try:
+                hist = yf.Ticker(idx["yf"]).history(period="5d")["Close"].dropna()
+                if len(hist) >= 2:
+                    close = float(hist.iloc[-1])
+                    prev_close = float(hist.iloc[-2])
+                    entry.update(
+                        close=close,
+                        prev_close=prev_close,
+                        change=close - prev_close,
+                        change_pct=(close - prev_close) / prev_close * 100,
+                        date=hist.index[-1].strftime("%Y-%m-%d"),
+                    )
+                    fetched = True
+                    print(f"  OK (yfinance): {idx['name']} {close:,.2f}")
+            except Exception as e:
+                print(f"  [WARN] yfinance {idx['yf']}: {e}", file=sys.stderr)
+
+        if not fetched:
+            r = _stooq_last_close(idx["stooq"])
+            if r:
+                close, prev_close, date = r
+                entry.update(
+                    close=close,
+                    prev_close=prev_close,
+                    change=close - prev_close,
+                    change_pct=(close - prev_close) / prev_close * 100,
+                    date=date,
+                )
+                print(f"  OK (Stooq):    {idx['name']} {close:,.2f}")
+            else:
+                print(f"  [ERROR] {idx['name']} 無法取得", file=sys.stderr)
+
+        results.append(entry)
+    return results
+
 
 def fetch_cnyes_api(name: str, category: str, max_items: int = 30, pages: int = 1) -> list[dict]:
     """呼叫鉅亨網 JSON API，v3 為主，media API 為備援。每個 category 抓 pages 頁。
@@ -232,7 +324,11 @@ def fetch_feed(source: dict) -> list[dict]:
         return []
 
 
-def build_markdown(all_news: list[dict], report_date: str) -> str:
+def build_markdown(
+    all_news: list[dict],
+    report_date: str,
+    indices: list[dict] | None = None,
+) -> str:
     """將新聞列表組合成 Markdown 報告。"""
     lines = [
         f"# 📰 晨間財經報告 {report_date}",
@@ -240,6 +336,28 @@ def build_markdown(all_news: list[dict], report_date: str) -> str:
         f"> 自動產生時間：{datetime.now(TW_TZ).strftime('%Y-%m-%d %H:%M')} (台灣時間)",
         "",
     ]
+
+    if indices:
+        lines.append("## 📊 大盤指數")
+        lines.append("")
+        lines.append("| 指數 | 收盤價 | 漲跌 | 漲跌幅 | 日期 |")
+        lines.append("|------|-------:|-----:|-------:|------|")  
+        for idx in indices:
+            if idx["close"] is None:
+                lines.append(f"| {idx['name']} | — | — | — | — |")
+                continue
+            arrow = "▲" if idx["change"] >= 0 else "▼"
+            sign  = "+" if idx["change"] >= 0 else ""
+            lines.append(
+                f"| {idx['name']} "
+                f"| {idx['close']:>12,.2f} "
+                f"| {arrow} {sign}{idx['change']:,.2f} "
+                f"| {sign}{idx['change_pct']:.2f}% "
+                f"| {idx['date']} |"
+            )
+        lines.append("")
+        lines.append("---")
+        lines.append("")
 
     # 依來源分組
     grouped: dict[str, list[dict]] = {}
@@ -282,20 +400,24 @@ def main():
         print("[ERROR] 無法取得任何新聞，終止執行。", file=sys.stderr)
         sys.exit(1)
 
+    # 抓取大盤指數
+    indices = fetch_indices()
+
     # 輸出 Markdown
     output_dir = Path("output/briefs")
     output_dir.mkdir(parents=True, exist_ok=True)
 
     file_stem = datetime.now(TW_TZ).strftime("%Y%m%d") + " 晨間財經報告"
     md_path = output_dir / f"{file_stem}.md"
-    md_content = build_markdown(all_news, today_tw)
+    md_content = build_markdown(all_news, today_tw, indices)
     md_path.write_text(md_content, encoding="utf-8")
     print(f"\nMarkdown 報告已儲存：{md_path}  ({len(all_news)} 則)")
 
     # 同時輸出 JSON（供通知腳本讀取）
     json_path = output_dir / f"{file_stem}.json"
+    output_data = {"indices": indices, "news": all_news}
     json_path.write_text(
-        json.dumps(all_news, ensure_ascii=False, indent=2), encoding="utf-8"
+        json.dumps(output_data, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     print(f"JSON 資料已儲存：{json_path}")
 

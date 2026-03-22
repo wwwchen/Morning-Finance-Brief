@@ -8,7 +8,6 @@ fetch_news.py
 import csv
 import feedparser
 import io
-import json
 import re
 import sys
 import requests
@@ -407,19 +406,13 @@ def main():
     output_dir = Path("output/briefs")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    file_stem = datetime.now(TW_TZ).strftime("%Y%m%d") + " 晨間財經報告"
+    file_stem = datetime.now(TW_TZ).strftime("%Y%m%d")
     md_path = output_dir / f"{file_stem}.md"
     md_content = build_markdown(all_news, today_tw, indices)
     md_path.write_text(md_content, encoding="utf-8")
     print(f"\nMarkdown 報告已儲存：{md_path}  ({len(all_news)} 則)")
 
-    # 同時輸出 JSON（供通知腳本讀取）
-    json_path = output_dir / f"{file_stem}.json"
-    output_data = {"indices": indices, "news": all_news}
-    json_path.write_text(
-        json.dumps(output_data, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
-    print(f"JSON 資料已儲存：{json_path}")
+
 
 
 if __name__ == "__main__":

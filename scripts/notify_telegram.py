@@ -108,7 +108,7 @@ def main():
     token = get_env("TELEGRAM_BOT_TOKEN")
     chat_id = get_env("TELEGRAM_CHAT_ID")
 
-    file_stem = datetime.now(TW_TZ).strftime("%Y%m%d") + " 晨間財經報告"
+    file_stem = datetime.now(TW_TZ).strftime("%Y%m%d")
     json_path = Path("output/briefs") / f"{file_stem}.json"
     if not json_path.exists():
         print(f"[ERROR] 找不到新聞資料：{json_path}", file=sys.stderr)
